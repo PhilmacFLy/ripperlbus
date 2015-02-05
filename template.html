@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ripperlbus</title>
+</head>
+<body>
+	<h1>Ripperlbus</h1>
+
+	<p><img src="static/car.jpg" alt="Bus"></p>
+	<form action="submit" method="POST">
+		1: <input type="text" name="0" value="{{index .Passagiere 0}}" {{if index .Disabled 0}}disabled{{end}}><br>
+		2: <input type="text" name="1" value="{{index .Passagiere 1}}" {{if index .Disabled 1}}disabled{{end}}><br>
+		3: <input type="text" name="2" value="{{index .Passagiere 2}}" {{if index .Disabled 2}}disabled{{end}}><br>
+		4: <input type="text" name="3" value="{{index .Passagiere 3}}" {{if index .Disabled 3}}disabled{{end}}><br>
+		5: <input type="text" name="4" value="{{index .Passagiere 4}}" {{if index .Disabled 4}}disabled{{end}}><br>
+		6: <input type="text" name="5" value="{{index .Passagiere 5}}" {{if index .Disabled 5}}disabled{{end}}><br>
+		<input type="submit" value="Submit">
+	</form>
+</body>
+</html>
