@@ -49,7 +49,9 @@ func savehandler(w http.ResponseWriter, r *http.Request) {
 
 	for i := range p.Passagiere {
 		val := r.FormValue(strconv.Itoa(i))
-		p.Passagiere[i] = val
+		if p.Passagiere[i] == "" {
+			p.Passagiere[i] = val
+		}
 		p.Disabled[i] = (val != "")
 	}
 	p.Save()
@@ -84,5 +86,5 @@ func main() {
 	http.HandleFunc("/static/", statichandler)
 	http.HandleFunc("/", mainhandler)
 	http.HandleFunc("/submit", savehandler)
-	http.ListenAndServe(":8080", nil)
+	http.ListenAndServe(":1313", nil)
 }
